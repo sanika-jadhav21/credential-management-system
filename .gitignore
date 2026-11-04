@@ -1,0 +1,33 @@
+# Python virtual environment
+.credential_management/
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing and cache
+.pytest_cache/
+.coverage
+.mypy_cache/
+
+# VS Code and IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+data/temp_*
