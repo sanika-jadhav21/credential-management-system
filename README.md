@@ -1,26 +1,11 @@
 # Credential Management System
 
 ## Project overview
-The Credential Management System is a rule-driven synthetic credential lifecycle project. It models learners, courses, completion evidence, credential eligibility, issuance, issuer/key metadata, third-party verification, revocation, and audit history.
+A rule-driven synthetic credential lifecycle project. It demonstrates learner/course master data, completion evidence, credential eligibility and issuance, issuer/key metadata, third-party verification, revocation, audit events, data validation, and controlled anomaly evaluation.
 
-The project demonstrates:
-- Eligibility checks before credential issuance.
-- Stable identifiers and relational integrity.
-- SHA-256 payload hash metadata for integrity demonstrations.
-- Verification outcomes, including `VALID`, `REVOKED`, `HASH_MISMATCH`, `EXPIRED`, and `NOT_FOUND`.
-- Revocation and append-only audit-event records.
-- Separate synthetic anomaly fixtures and rule-based evaluation.
+> **Security scope:** Issuer key and signature values are simulated metadata. SHA-256 payload hashes demonstrate integrity checking, but this project does not implement production-grade asymmetric digital signatures, managed private keys, authenticated roles, or legally trusted credentials.
 
-> **Security scope:** The generated key and signature values are explicitly simulated. They are not production cryptographic signing keys or legally trusted digital signatures. A production deployment needs managed private keys, real asymmetric signatures, access control, secure key rotation, and operational monitoring.
-
-## Database
-- MySQL 8.0
-- Database: `credential_management_db`
-- Staging database used for the verified import and validation: `credential_management_staging_db`
-- Schema: `database/schema.sql`
-- Ten relational tables are present. `issuer_key` is an additional supporting entity alongside the nine core business entities.
-
-## Data volume (verified generator output)
+## Verified data volume
 | Entity/table | Rows |
 |---|---:|
 | learner | 20,000 |
@@ -35,85 +20,87 @@ The project demonstrates:
 | audit_event | 15,500 |
 | **Total** | **77,010** |
 
-Synthetic generation uses fixed seed `20261022`. The generator uses a fixed reference date to support repeatability.
+Fixed seed: `20261022`. Generator reference date: `2026-11-04`.
 
 ## Project layout
 ```text
 credential_management_system/
-├── .env                       # local DB credentials; never commit
 ├── .env.example
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
+├── AI_PROMPT_HISTORY.md
+├── SOURCE_MANIFEST.json
 ├── config/
 ├── database/
 │   ├── schema.sql
 │   └── schema_staging.sql
 ├── data/
-│   ├── raw/                   # generated source CSVs
-│   ├── processed/             # ground truth and evaluation outputs
+│   ├── raw/
+│   ├── processed/
 │   └── exports/
+├── docs/
+│   ├── DATA_DICTIONARY.md
+│   ├── ERD.md
+│   ├── ERD_RELATIONSHIPS.txt
+│   ├── VALIDATION_REPORT.md
+│   └── REQUIREMENTS_TRACEABILITY.md
 ├── src/
 │   ├── data_generation/
-│   │   ├── generator.py
-│   │   ├── ground_truth.py
-│   │   └── evaluate.py
 │   └── database/
-│       ├── bulk_import.py
-│       ├── bulk_import_staging.py
-│       ├── compare_csv_mysql.py
-│       ├── compare_csv_mysql_full.py
-│       └── validate_data_quality.py
 └── tests/
 ```
 
 ## Setup
-1. Create and activate a virtual environment.
-2. Install dependencies:
-   ```powershell
-   pip install -r requirements.txt
-   ```
-3. Configure `.env` using `.env.example`. Keep `.env` out of Git.
-4. Create the database schema using the appropriate SQL file for the target database. Do not rerun schema creation or imports against an already populated database unless you intentionally want to rebuild it.
-
-## Reproducible workflow
-Run commands from the project root (`E:\credential_management_system`):
+Run commands from the project root in PowerShell.
 
 ```powershell
-# Generate source datasets (only when a regeneration is intended)
+python -m venv .credential_management
+.\.credential_management\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+Copy `.env.example` to `.env` and configure the local MySQL connection. Never commit `.env` or share its contents.
+
+## Reproducible workflow
+```powershell
+# Generate source datasets only when regeneration is intended
 python -m src.data_generation.generator
 
-# Generate the separate anomaly ground-truth fixtures
+# Generate separate anomaly ground-truth fixtures
 python -m src.data_generation.ground_truth
 
-# Run the rule-engine evaluation
+# Run controlled rule-engine evaluation
 python -m src.data_generation.evaluate
 
-# Validate source CSV data against documented business rules
+# Run unit tests
+python -m unittest tests.test_evaluation_rules -v
+
+# Validate source CSV data against business rules
 python -m src.database.validate_data_quality
 
-# Compare CSV rows and every column with MySQL (read-only)
+# Compare source CSV data with the configured MySQL database (read-only)
 python -m src.database.compare_csv_mysql_full
 ```
 
-The evaluation script reads source CSVs and `ground_truth.csv`. It writes:
-- `data/processed/evaluation_dataset.csv`
-- `data/processed/evaluation_metrics.json`
-- `data/processed/evaluation_report.txt`
+**Database caution:** The previously validated database was `credential_management_staging_db`. Confirm the database selected in local `.env` before running database validation. Do not rerun schema creation or bulk import against an already populated database unless intentionally rebuilding it.
 
-The evaluator scores four labelled anomaly fixtures and four paired normal controls. It reports source-data findings separately. Metrics are controlled synthetic rule-engine test metrics, not ML model performance.
+## Evaluation interpretation
+The evaluator uses four labelled anomaly fixtures and four normal controls. The recorded confusion matrix was TP=4, TN=4, FP=0, FN=0. These are controlled synthetic rule-engine test results, not trained-ML performance and not evidence of real-world generalization.
 
-## Verified checks recorded during project work
-- CSV-to-MySQL full comparison: all ten tables matched row counts, primary keys, and column values after JSON normalization; zero differing cells.
-- Foreign-key relationship checks: all passed.
-- Staging database business-rule validation: 24 checks passed with zero reported issues.
-- Staging data counts: 10,000 credentials, 9,500 active credentials, 500 revoked credentials, 500 revocation records, 5,000 verification requests, and 15,500 audit events.
+Ground-truth labels are stored separately from ordinary operational source tables. Do not use ground-truth labels as prediction features.
 
-These are recorded results from the completed validation run, not claims that every possible production scenario has been tested.
+## Recorded validation evidence
+- Ten source CSV tables were compared with the staging MySQL database; row counts, primary keys, and comparable column values matched after JSON normalization.
+- The recorded staging validation reported 24 passing business-rule checks and zero findings.
+- Two independent generator runs with seed `20261022` produced identical SHA-256 checksums for all ten `data/raw` CSV files.
+- See `docs/VALIDATION_REPORT.md` for the recorded procedure and scope.
 
-## Limitations and future improvements
-- Replace simulated signing metadata with a proper asymmetric signing system and managed key store.
-- Add authenticated role-based access and approval workflows.
-- Add API/UI integration and end-to-end automated tests if required by the deployment scope.
-- Add independent larger test suites, property-based tests, and security testing.
-- Define retention, privacy, and legal requirements before using real learner data.
+These are recorded results from the tested project snapshot. They do not imply production security, load capacity, or testing of every possible lifecycle transition.
+
+## Known limitations and future work
+- Dataset sizes are currently configured as constants in `src/data_generation/generator.py`; starter/full scale configuration is not exposed as a command-line option.
+- Each synthetic issuer currently has one active key version. Historical key rotation and issuer change scenarios should be added for broader lifecycle coverage.
+- Audit events are generated and retained as event records, but database-level prevention of UPDATE/DELETE has not been demonstrated.
+- Simulated signing metadata is not production cryptography.
+- Add authenticated role-based access, API/UI integration, larger independent test suites, property-based tests, and security testing if deployment scope requires them.

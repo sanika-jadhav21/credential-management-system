@@ -1,0 +1,232 @@
+{
+  "project": "Credential Management System",
+  "dataset_provenance": "Synthetic data generated locally by the project generator. No external personal dataset is included.",
+  "random_seed": 20261022,
+  "reference_date": "2026-11-04",
+  "generated_entities": {
+    "learners": 20000,
+    "courses": 1000,
+    "credential_rules": 1000,
+    "completion_records": 20000,
+    "issuers": 5,
+    "issuer_keys": 5,
+    "credentials": 10000,
+    "revocations": 500,
+    "verification_requests": 5000,
+    "audit_events": 15500
+  },
+  "external_sources": [],
+  "license_note": "Synthetic records only. Review dependency licenses separately before redistribution.",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "e09c7d2227c5ea7ae7672f3d957c0bbcb8eadd44c96c296472ebb01a1f2d367e",
+      "size_bytes": 112
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "3f7af84aea9c569a62576e2582f128b38dc7dcac4494e895aa96de938b415808",
+      "size_bytes": 380
+    },
+    {
+      "path": "AI_PROMPT_HISTORY.md",
+      "sha256": "9e40857ece1abde920b0cc240028abe415b9f9076b86a9d0699b788b331e9727",
+      "size_bytes": 12403
+    },
+    {
+      "path": "README.md",
+      "sha256": "9eaecdf55f8e3455743bb62adad7abb704e26d11af2e1220db5a466eb6e08ba8",
+      "size_bytes": 4730
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "4c60a3ed825b5ee66ba6354c7a38ff83773cfd34f44f12787c33f5e41e623142",
+      "size_bytes": 52
+    },
+    {
+      "path": "config/database.py",
+      "sha256": "216ca36cf4eb29657bff69def0e0a8538c043a8ab5680c7034cffbd38acb955f",
+      "size_bytes": 1037
+    },
+    {
+      "path": "config/verify_schema.py",
+      "sha256": "0c3af498e0e9c8f2080a52d69d1d895de9392f14eebe45b19bedb02e95566d80",
+      "size_bytes": 2370
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "tests/test_evaluation_rules.py",
+      "sha256": "a7e0dc5f8c8a978c1bc3f447b351dbfc1fe4058c48ba02bea47a5f7684086fe8",
+      "size_bytes": 1461
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "src/data_generation/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "src/data_generation/evaluate.py",
+      "sha256": "6f258acc31763042c14553f4b2d1b98f265fa1d36ba33024477545b0caaa9a3c",
+      "size_bytes": 16729
+    },
+    {
+      "path": "src/data_generation/generator.py",
+      "sha256": "058f4c62e1df30ebc7cc091a443f95a7aecb2b41f7743e2c37f638a04f0bec86",
+      "size_bytes": 53717
+    },
+    {
+      "path": "src/data_generation/ground_truth.py",
+      "sha256": "65ad8f1db684f01d96dbcc78dccb5c560d73f5362a8b4c93bb5d9e800451b1f1",
+      "size_bytes": 8199
+    },
+    {
+      "path": "src/database/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "src/database/bulk_import.py",
+      "sha256": "5e17d569aad0c9f78300ef7472519b57cb71a0edb8acc8a48fc94ffb6b01cb5e",
+      "size_bytes": 9506
+    },
+    {
+      "path": "src/database/compare_csv_mysql.py",
+      "sha256": "a885f4ef3ef1addfbd0b5061ffd92eeeb648b1e26df5e3400cc57ed03b133418",
+      "size_bytes": 8563
+    },
+    {
+      "path": "src/database/compare_csv_mysql_full.py",
+      "sha256": "9edaf84cd0bdadb39ee2b81ceeddb9f4b25a2193b2f777104aa18e0ca4c7e099",
+      "size_bytes": 23003
+    },
+    {
+      "path": "src/database/validate_data_quality.py",
+      "sha256": "af4ca4b375d4b75d8c36504d6eca735de081e16bff70be236948d95e68383a06",
+      "size_bytes": 13709
+    },
+    {
+      "path": "docs/DATA_DICTIONARY.md",
+      "sha256": "d6ce0d1ada422bd68de6cd1cea138bdbbd4b5d98fead6e82b32c5032b22c35d5",
+      "size_bytes": 11790
+    },
+    {
+      "path": "docs/ERD.md",
+      "sha256": "90a1cc7cc43998ec02759311ec67a59c21b5851917acd1548b746e3e5c92aa71",
+      "size_bytes": 3137
+    },
+    {
+      "path": "docs/ERD_RELATIONSHIPS.txt",
+      "sha256": "f9fbd154f981361b58e7b3640edbf6b6e09aa95706f5fffbe5d9bdc99851083b",
+      "size_bytes": 500
+    },
+    {
+      "path": "docs/REQUIREMENTS_TRACEABILITY.md",
+      "sha256": "dc8a1b76659b421d07847d4a3da15534abe45acb60d17f08c10f1062680bf2c2",
+      "size_bytes": 2684
+    },
+    {
+      "path": "docs/VALIDATION_REPORT.md",
+      "sha256": "06a927e668f076ac353c97388ffbd79cc5f027d4ef5afb24c90770a8a61e86b1",
+      "size_bytes": 6837
+    },
+    {
+      "path": "data/raw/audit_events.csv",
+      "sha256": "a496458bd5f7309329258cd9dae0f50e5d6375506c8d937aa243161ce55af6f1",
+      "size_bytes": 6499716
+    },
+    {
+      "path": "data/raw/completion_records.csv",
+      "sha256": "c2f13d761739d217f29d7d684841ac51490967263d827f5cebd10ddad46e8b1d",
+      "size_bytes": 3419194
+    },
+    {
+      "path": "data/raw/courses.csv",
+      "sha256": "b0725af7f24d9f45aac36142c0f80ad635011a2ae2dd1af4f139a79da4ab9ddf",
+      "size_bytes": 256451
+    },
+    {
+      "path": "data/raw/credential_rules.csv",
+      "sha256": "f0c75f78de30ff39336ebaf73c3ed025255e53f558adcb19ecd47b651b671e72",
+      "size_bytes": 91132
+    },
+    {
+      "path": "data/raw/credentials.csv",
+      "sha256": "137274e389721431a4dc47d097fb4cb5d067178f86519a3463bdb4858cc9187b",
+      "size_bytes": 3420724
+    },
+    {
+      "path": "data/raw/issuer_keys.csv",
+      "sha256": "21c26632c6e10e96798bb4befb2bfaa2ff9d7d7178c4a3d69faee6f5607261cb",
+      "size_bytes": 874
+    },
+    {
+      "path": "data/raw/issuers.csv",
+      "sha256": "e997f1bebb4d491f875c528e48374c2ba28e68553247612459c2f5babcd14c0d",
+      "size_bytes": 859
+    },
+    {
+      "path": "data/raw/learners.csv",
+      "sha256": "dc7df834b9b0bd360b7f6191727f2580b9a5b07d186590de9ebe6ccac23823d0",
+      "size_bytes": 2947484
+    },
+    {
+      "path": "data/raw/revocations.csv",
+      "sha256": "53a937a579e0db686f9198a40c2d8236d293bbdcb3011482d6c783b02a45af28",
+      "size_bytes": 99394
+    },
+    {
+      "path": "data/raw/verification_requests.csv",
+      "sha256": "21a3b00ec69d4c2dbae15340db7f38cab05dc3621c670ae171d8a098e88efc3b",
+      "size_bytes": 1623062
+    },
+    {
+      "path": "data/processed/anomaly_cases.csv",
+      "sha256": "16f8eb3819c96a31532582b745f8ba1a2548d11eacc971e86afa811d5cbfb342",
+      "size_bytes": 1691
+    },
+    {
+      "path": "data/processed/evaluation_dataset.csv",
+      "sha256": "655f1c35e4846975f71ebaa0904da0d525f0439674df73e60895ab61a1052e80",
+      "size_bytes": 1405
+    },
+    {
+      "path": "data/processed/evaluation_metrics.json",
+      "sha256": "c6dd6828c85fb004438722abb3a07bb725665a1da278c3d0dc3627c955ca59e4",
+      "size_bytes": 4450
+    },
+    {
+      "path": "data/processed/evaluation_report.txt",
+      "sha256": "15e9062d5b0f37b36ffc5239c02ccbedf8e5ed115cbf84539754378166260909",
+      "size_bytes": 2467
+    },
+    {
+      "path": "data/processed/full_comparison_report.json",
+      "sha256": "a8891b2f03a7f1997d2efc6dec6a85938aba7e9feb8038fa09ed7f13a46dea14",
+      "size_bytes": 15078
+    },
+    {
+      "path": "data/processed/ground_truth.csv",
+      "sha256": "16f8eb3819c96a31532582b745f8ba1a2548d11eacc971e86afa811d5cbfb342",
+      "size_bytes": 1691
+    },
+    {
+      "path": "database/schema.sql",
+      "sha256": "524a6b43c707c9e409631b2b4969939dd1abc4768c1cd8093e7bf40edeba0ead",
+      "size_bytes": 24047
+    },
+    {
+      "path": "database/schema_staging.sql",
+      "sha256": "7014c7b8906f7e8fd0f7444978134dd20e6a2a368ea57aa3d6934b5280533ffd",
+      "size_bytes": 24265
+    }
+  ]
+}
