@@ -1,0 +1,427 @@
+[
+    {
+        "table": "learner",
+        "csv_rows": 20000,
+        "mysql_rows": 20000,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 20000,
+        "columns_compared": 10,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {
+            "last_name": 43
+        },
+        "examples": [
+            {
+                "primary_key": "LRN-015634",
+                "column": "last_name",
+                "csv_value": "D’Alia",
+                "mysql_value": "Dâ€™Alia"
+            },
+            {
+                "primary_key": "LRN-013306",
+                "column": "last_name",
+                "csv_value": "D’Alia",
+                "mysql_value": "Dâ€™Alia"
+            },
+            {
+                "primary_key": "LRN-004687",
+                "column": "last_name",
+                "csv_value": "D’Alia",
+                "mysql_value": "Dâ€™Alia"
+            },
+            {
+                "primary_key": "LRN-017821",
+                "column": "last_name",
+                "csv_value": "D’Alia",
+                "mysql_value": "Dâ€™Alia"
+            },
+            {
+                "primary_key": "LRN-012261",
+                "column": "last_name",
+                "csv_value": "D’Alia",
+                "mysql_value": "Dâ€™Alia"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "course",
+        "csv_rows": 1000,
+        "mysql_rows": 1000,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 1000,
+        "columns_compared": 12,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {
+            "duration_hours": 98
+        },
+        "examples": [
+            {
+                "primary_key": "CRS-000420",
+                "column": "duration_hours",
+                "csv_value": "88.30",
+                "mysql_value": "88.3"
+            },
+            {
+                "primary_key": "CRS-000398",
+                "column": "duration_hours",
+                "csv_value": "105.90",
+                "mysql_value": "105.9"
+            },
+            {
+                "primary_key": "CRS-000422",
+                "column": "duration_hours",
+                "csv_value": "175.60",
+                "mysql_value": "175.6"
+            },
+            {
+                "primary_key": "CRS-000969",
+                "column": "duration_hours",
+                "csv_value": "93.30",
+                "mysql_value": "93.3"
+            },
+            {
+                "primary_key": "CRS-000081",
+                "column": "duration_hours",
+                "csv_value": "70.60",
+                "mysql_value": "70.6"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "credential_rule",
+        "csv_rows": 1000,
+        "mysql_rows": 1000,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 1000,
+        "columns_compared": 12,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {
+            "min_completion_pct": 1000,
+            "min_assessment_score": 99,
+            "min_attendance_pct": 105
+        },
+        "examples": [
+            {
+                "primary_key": "RULE-000389",
+                "column": "min_completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            },
+            {
+                "primary_key": "RULE-000494",
+                "column": "min_completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            },
+            {
+                "primary_key": "RULE-000334",
+                "column": "min_completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            },
+            {
+                "primary_key": "RULE-000331",
+                "column": "min_assessment_score",
+                "csv_value": "45.80",
+                "mysql_value": "45.8"
+            },
+            {
+                "primary_key": "RULE-000331",
+                "column": "min_completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "completion_record",
+        "csv_rows": 20000,
+        "mysql_rows": 20000,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 20000,
+        "columns_compared": 15,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {
+            "completion_pct": 14616,
+            "assessment_score": 1702,
+            "attendance_pct": 2562
+        },
+        "examples": [
+            {
+                "primary_key": "CMP-LRN-014993-CRS-000534",
+                "column": "completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            },
+            {
+                "primary_key": "CMP-LRN-008843-CRS-000725",
+                "column": "assessment_score",
+                "csv_value": "33.70",
+                "mysql_value": "33.7"
+            },
+            {
+                "primary_key": "CMP-LRN-008843-CRS-000725",
+                "column": "completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            },
+            {
+                "primary_key": "CMP-LRN-019661-CRS-000594",
+                "column": "completion_pct",
+                "csv_value": "100.00",
+                "mysql_value": "100"
+            },
+            {
+                "primary_key": "CMP-LRN-019661-CRS-000594",
+                "column": "attendance_pct",
+                "csv_value": "86.10",
+                "mysql_value": "86.1"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "issuer",
+        "csv_rows": 5,
+        "mysql_rows": 5,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 5,
+        "columns_compared": 7,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {},
+        "examples": [],
+        "status": "PASS"
+    },
+    {
+        "table": "issuer_key",
+        "csv_rows": 5,
+        "mysql_rows": 5,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 5,
+        "columns_compared": 10,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {},
+        "examples": [],
+        "status": "PASS"
+    },
+    {
+        "table": "credential",
+        "csv_rows": 10000,
+        "mysql_rows": 10000,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 10000,
+        "columns_compared": 17,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {
+            "expires_at": 7437,
+            "payload_hash": 7437,
+            "signature_value": 7437,
+            "issue_date": 7437,
+            "valid_from": 7437,
+            "created_at": 7437
+        },
+        "examples": [
+            {
+                "primary_key": "CRD-2026-006319",
+                "column": "expires_at",
+                "csv_value": "2029-10-18 17:01:00",
+                "mysql_value": "2028-12-31 13:45:19"
+            },
+            {
+                "primary_key": "CRD-2026-006319",
+                "column": "payload_hash",
+                "csv_value": "a9e435fad6b73351d13be7964e8cdc81f555cb0e829b4468fffbeb7d901699b8",
+                "mysql_value": "2c97dda9dc8b413d3d484bf7c3732234b1e195c5fcb34929b4e9c289b5360333"
+            },
+            {
+                "primary_key": "CRD-2026-006319",
+                "column": "signature_value",
+                "csv_value": "335f85bfa4676f4449ef5cd4bb48682e5bd4a1822ba76a1ccde344e8235e0dab",
+                "mysql_value": "1d395268454af6c3a532beea7198863fb9ac71582c7e42a433974b5fd7470d57"
+            },
+            {
+                "primary_key": "CRD-2026-006319",
+                "column": "issue_date",
+                "csv_value": "2026-10-19 17:01:00",
+                "mysql_value": "2026-01-01 13:45:19"
+            },
+            {
+                "primary_key": "CRD-2026-006319",
+                "column": "valid_from",
+                "csv_value": "2026-10-19 17:01:00",
+                "mysql_value": "2026-01-01 13:45:19"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "verification_request",
+        "csv_rows": 5000,
+        "mysql_rows": 5000,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 5000,
+        "columns_compared": 13,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [
+            "created_at"
+        ],
+        "column_differences": {
+            "request_timestamp": 5000,
+            "checked_payload_hash": 3541,
+            "provided_payload_hash": 3541,
+            "response_timestamp": 5000
+        },
+        "examples": [
+            {
+                "primary_key": "VER-2026-003977",
+                "column": "request_timestamp",
+                "csv_value": "2026-12-08 19:38:00",
+                "mysql_value": "2026-03-05 06:17:00"
+            },
+            {
+                "primary_key": "VER-2026-003977",
+                "column": "checked_payload_hash",
+                "csv_value": "9248e89186861b69e593968ba8dae969883a8455544e7463fdf5ba583af5fdc3",
+                "mysql_value": "a3829cfa91ac0e287937b7aadeba31dc424feabe921a9a72c1e9f66eda48c723"
+            },
+            {
+                "primary_key": "VER-2026-003977",
+                "column": "provided_payload_hash",
+                "csv_value": "9248e89186861b69e593968ba8dae969883a8455544e7463fdf5ba583af5fdc3",
+                "mysql_value": "a3829cfa91ac0e287937b7aadeba31dc424feabe921a9a72c1e9f66eda48c723"
+            },
+            {
+                "primary_key": "VER-2026-003977",
+                "column": "response_timestamp",
+                "csv_value": "2026-12-08 19:38:00",
+                "mysql_value": "2026-03-05 06:17:00"
+            },
+            {
+                "primary_key": "VER-2026-004969",
+                "column": "request_timestamp",
+                "csv_value": "2026-12-09 12:10:00",
+                "mysql_value": "2026-03-05 22:49:00"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "revocation",
+        "csv_rows": 500,
+        "mysql_rows": 500,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 500,
+        "columns_compared": 9,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [
+            "created_at"
+        ],
+        "column_differences": {
+            "revoked_at": 500,
+            "effective_at": 500
+        },
+        "examples": [
+            {
+                "primary_key": "REV-CRD-2026-002455-01",
+                "column": "revoked_at",
+                "csv_value": "2026-12-04 23:48:00",
+                "mysql_value": "2026-01-31 18:47:00"
+            },
+            {
+                "primary_key": "REV-CRD-2026-002455-01",
+                "column": "effective_at",
+                "csv_value": "2026-12-04 23:48:00",
+                "mysql_value": "2026-01-31 18:47:00"
+            },
+            {
+                "primary_key": "REV-CRD-2026-001574-01",
+                "column": "revoked_at",
+                "csv_value": "2026-12-04 19:06:00",
+                "mysql_value": "2026-01-31 14:05:00"
+            },
+            {
+                "primary_key": "REV-CRD-2026-001574-01",
+                "column": "effective_at",
+                "csv_value": "2026-12-04 19:06:00",
+                "mysql_value": "2026-01-31 14:05:00"
+            },
+            {
+                "primary_key": "REV-CRD-2026-002865-01",
+                "column": "revoked_at",
+                "csv_value": "2026-12-04 20:39:00",
+                "mysql_value": "2026-01-31 15:38:00"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    },
+    {
+        "table": "audit_event",
+        "csv_rows": 15500,
+        "mysql_rows": 15500,
+        "missing_in_mysql": 0,
+        "extra_in_mysql": 0,
+        "common_records": 15500,
+        "columns_compared": 19,
+        "columns_only_in_csv": [],
+        "columns_only_in_mysql": [],
+        "column_differences": {
+            "new_state": 15500,
+            "event_metadata": 15500,
+            "event_timestamp": 12937,
+            "created_at": 12937,
+            "previous_state": 500
+        },
+        "examples": [
+            {
+                "primary_key": "AUD-2026-004031",
+                "column": "new_state",
+                "csv_value": "{\"credential_status\":\"ACTIVE\",\"payload_hash\":\"da382c2ce92c0d1e4271c5dc53a467d55e01f31de30a5ca81befc3249c4db5d4\"}",
+                "mysql_value": "{\"payload_hash\": \"23901868b506a57cd35e8e2398e666a5a6f8958f3cf53d7f54917fb49af9d40d\", \"credential_status\": \"ACTIVE\"}"
+            },
+            {
+                "primary_key": "AUD-2026-004031",
+                "column": "event_metadata",
+                "csv_value": "{\"completion_id\":\"CMP-LRN-004228-CRS-000439\",\"issuer_id\":\"ISS-0001\",\"issuer_key_id\":\"KEY-0001-V01\",\"rule_id\":\"RULE-000439\",\"signature_mode\":\"SIMULATED\"}",
+                "mysql_value": "{\"rule_id\": \"RULE-000439\", \"issuer_id\": \"ISS-0001\", \"completion_id\": \"CMP-LRN-004228-CRS-000439\", \"issuer_key_id\": \"KEY-0001-V01\", \"signature_mode\": \"SIMULATED\"}"
+            },
+            {
+                "primary_key": "AUD-2026-004031",
+                "column": "event_timestamp",
+                "csv_value": "2026-05-14 17:01:00",
+                "mysql_value": "2026-01-01 13:07:11"
+            },
+            {
+                "primary_key": "AUD-2026-004031",
+                "column": "created_at",
+                "csv_value": "2026-05-14 17:01:00",
+                "mysql_value": "2026-01-01 13:07:11"
+            },
+            {
+                "primary_key": "AUD-2026-009159",
+                "column": "new_state",
+                "csv_value": "{\"credential_status\":\"ACTIVE\",\"payload_hash\":\"d6ad87bbf4dba4f0a604366ac582b2aa645ebd38ef9749f1628b8639344d0cf1\"}",
+                "mysql_value": "{\"payload_hash\": \"f154e64ad9d6d397f56d1ff6a23e76a85f4ef0eb36dc4d807754219e53a499df\", \"credential_status\": \"ACTIVE\"}"
+            }
+        ],
+        "status": "DIFFERENCES_FOUND"
+    }
+]

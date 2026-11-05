@@ -1,0 +1,162 @@
+{
+  "evaluation_type": "controlled_synthetic_rule_engine_test",
+  "seed": 20261022,
+  "scoring_scope": "4 independently labelled anomaly fixtures plus 4 paired normal controls",
+  "overall": {
+    "total_cases": 8,
+    "confusion_matrix": {
+      "true_positive": 4,
+      "true_negative": 4,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "normal_controls": {
+    "total_cases": 4,
+    "confusion_matrix": {
+      "true_positive": 0,
+      "true_negative": 4,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "accuracy": 1.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0
+  },
+  "anomaly_cases": {
+    "total_cases": 4,
+    "confusion_matrix": {
+      "true_positive": 4,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "per_anomaly_type": {
+    "ALTERED_PAYLOAD_HASH_NOT_DETECTED": {
+      "cases": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": [
+        {
+          "case_id": "ANM-0004",
+          "expected": "ANOMALY",
+          "predicted": "ANOMALY",
+          "passed": true
+        },
+        {
+          "case_id": "CTRL-ANM-0004",
+          "expected": "NORMAL",
+          "predicted": "NORMAL",
+          "passed": true
+        }
+      ]
+    },
+    "CREDENTIAL_ISSUED_BEFORE_COMPLETION": {
+      "cases": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": [
+        {
+          "case_id": "ANM-0001",
+          "expected": "ANOMALY",
+          "predicted": "ANOMALY",
+          "passed": true
+        },
+        {
+          "case_id": "CTRL-ANM-0001",
+          "expected": "NORMAL",
+          "predicted": "NORMAL",
+          "passed": true
+        }
+      ]
+    },
+    "DUPLICATE_CREDENTIAL_ID": {
+      "cases": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": [
+        {
+          "case_id": "ANM-0002",
+          "expected": "ANOMALY",
+          "predicted": "ANOMALY",
+          "passed": true
+        },
+        {
+          "case_id": "CTRL-ANM-0002",
+          "expected": "NORMAL",
+          "predicted": "NORMAL",
+          "passed": true
+        }
+      ]
+    },
+    "REVOKED_CREDENTIAL_VERIFIED_AS_ACTIVE": {
+      "cases": 2,
+      "passed": 2,
+      "failed": 0,
+      "details": [
+        {
+          "case_id": "ANM-0003",
+          "expected": "ANOMALY",
+          "predicted": "ANOMALY",
+          "passed": true
+        },
+        {
+          "case_id": "CTRL-ANM-0003",
+          "expected": "NORMAL",
+          "predicted": "NORMAL",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "coverage": {
+    "supported_anomaly_types": [
+      "ALTERED_PAYLOAD_HASH_NOT_DETECTED",
+      "CREDENTIAL_ISSUED_BEFORE_COMPLETION",
+      "DUPLICATE_CREDENTIAL_ID",
+      "REVOKED_CREDENTIAL_VERIFIED_AS_ACTIVE"
+    ],
+    "anomaly_cases": 4,
+    "normal_control_cases": 4,
+    "all_anomaly_types_covered": {
+      "ALTERED_PAYLOAD_HASH_NOT_DETECTED": true,
+      "CREDENTIAL_ISSUED_BEFORE_COMPLETION": true,
+      "DUPLICATE_CREDENTIAL_ID": true,
+      "REVOKED_CREDENTIAL_VERIFIED_AS_ACTIVE": true
+    }
+  },
+  "source_data_quality": {
+    "credentials_read": 10000,
+    "completion_records_read": 20000,
+    "source_rule_findings": 0,
+    "findings": []
+  },
+  "operational_counts": {
+    "verification_requests": 5000,
+    "revocation_records": 500,
+    "valid_verification_responses": 4000,
+    "revoked_verification_responses": 500
+  },
+  "limitations": [
+    "These are controlled synthetic rule-engine test metrics, not machine-learning metrics.",
+    "The test suite contains four anomaly fixtures and four paired normal controls; it does not establish real-world generalization.",
+    "Source data-quality findings are reported separately and are not mixed into the fixture confusion matrix.",
+    "The hash scenario compares the observed checked and provided hashes; it does not constitute a production digital-signature implementation."
+  ],
+  "reproducibility": {
+    "evaluation_dataset_sha256": "3812dee2c096764e37a4a3bf15d6f38ac6562f53d27721eb56ad7e81b1f89f65",
+    "fixed_seed": 20261022,
+    "source_files_modified": false,
+    "mysql_modified": false
+  }
+}

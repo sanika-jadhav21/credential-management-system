@@ -1,0 +1,10 @@
+learner 1:N completion_record
+course 1:N completion_record
+course 1:N credential_rule
+issuer 1:N issuer_key
+completion_record 1:N credential issuance sequence
+credential_rule 1:N credential (course match enforced)
+issuer_key 1:N credential (issuer match enforced)
+credential 1:N verification_request
+credential 1:N revocation history
+Each audit_event may optionally reference one row from learner, course, credential_rule, completion_record, credential, issuer, verification_request, and revocation.

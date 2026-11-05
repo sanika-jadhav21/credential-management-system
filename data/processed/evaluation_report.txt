@@ -1,0 +1,111 @@
+CREDENTIAL MANAGEMENT SYSTEM
+CONTROLLED RULE-ENGINE EVALUATION REPORT
+============================================================
+Anomaly fixtures: 4
+Normal controls: 4
+Total scored cases: 8
+Passed test cases: 8
+Failed test cases: 0
+
+OVERALL METRICS
+{
+  "total_cases": 8,
+  "confusion_matrix": {
+    "true_positive": 4,
+    "true_negative": 4,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0
+}
+
+PER-ANOMALY COVERAGE
+{
+  "ALTERED_PAYLOAD_HASH_NOT_DETECTED": {
+    "cases": 2,
+    "passed": 2,
+    "failed": 0,
+    "details": [
+      {
+        "case_id": "ANM-0004",
+        "expected": "ANOMALY",
+        "predicted": "ANOMALY",
+        "passed": true
+      },
+      {
+        "case_id": "CTRL-ANM-0004",
+        "expected": "NORMAL",
+        "predicted": "NORMAL",
+        "passed": true
+      }
+    ]
+  },
+  "CREDENTIAL_ISSUED_BEFORE_COMPLETION": {
+    "cases": 2,
+    "passed": 2,
+    "failed": 0,
+    "details": [
+      {
+        "case_id": "ANM-0001",
+        "expected": "ANOMALY",
+        "predicted": "ANOMALY",
+        "passed": true
+      },
+      {
+        "case_id": "CTRL-ANM-0001",
+        "expected": "NORMAL",
+        "predicted": "NORMAL",
+        "passed": true
+      }
+    ]
+  },
+  "DUPLICATE_CREDENTIAL_ID": {
+    "cases": 2,
+    "passed": 2,
+    "failed": 0,
+    "details": [
+      {
+        "case_id": "ANM-0002",
+        "expected": "ANOMALY",
+        "predicted": "ANOMALY",
+        "passed": true
+      },
+      {
+        "case_id": "CTRL-ANM-0002",
+        "expected": "NORMAL",
+        "predicted": "NORMAL",
+        "passed": true
+      }
+    ]
+  },
+  "REVOKED_CREDENTIAL_VERIFIED_AS_ACTIVE": {
+    "cases": 2,
+    "passed": 2,
+    "failed": 0,
+    "details": [
+      {
+        "case_id": "ANM-0003",
+        "expected": "ANOMALY",
+        "predicted": "ANOMALY",
+        "passed": true
+      },
+      {
+        "case_id": "CTRL-ANM-0003",
+        "expected": "NORMAL",
+        "predicted": "NORMAL",
+        "passed": true
+      }
+    ]
+  }
+}
+
+Source data-quality findings: 0
+Verification requests: 5000
+Revocation records: 500
+Evaluation SHA-256: 3812dee2c096764e37a4a3bf15d6f38ac6562f53d27721eb56ad7e81b1f89f65
+
+Metrics describe controlled synthetic rule-engine tests, not ML performance.
+Operational CSV files and MySQL tables were not modified.
